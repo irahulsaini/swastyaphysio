@@ -1,0 +1,84 @@
+
+// Variable overrides second
+$primary				:	 #4278ba;
+$secondary				:	 #F9C349;
+$input-btn-focus-width	: 0;
+$font-size-base			: 1rem;
+$focus-ring-width:      0 !default;
+$focus-ring-opacity:    0 !default;
+$box-shadow-inset:      0 !default;
+
+
+$h1-font-size:                					$font-size-base * 1.8;
+$h2-font-size:                					$font-size-base * 1.6;
+$h3-font-size:                					$font-size-base * 1.4;
+$h4-font-size:                					$font-size-base * 1.2;
+$h5-font-size:                					$font-size-base * 1.1;
+$h6-font-size:               					$font-size-base;
+
+
+$display1-size:              					$font-size-base * 3.4;
+$display2-size:               					$font-size-base * 3.2;
+$display3-size:               					$font-size-base * 2.8;
+$display4-size:               					$font-size-base * 2.4;
+
+$enable-shadows:                              	true;
+$enable-gradients:                            	true;
+$enable-responsive-font-sizes:                	true;
+
+
+
+
+
+@import "mixins/banner";
+@include bsBanner("");
+
+
+// scss-docs-start import-stack
+// Configuration
+@import "functions";
+@import "variables";
+@import "variables-dark";
+@import "maps";
+@import "mixins";
+@import "utilities";
+
+// Layout & components
+@import "root";
+@import "reboot";
+@import "type";
+@import "images";
+@import "containers";
+@import "grid";
+@import "tables";
+@import "forms";
+@import "buttons";
+@import "transitions";
+@import "dropdown";
+@import "button-group";
+@import "nav";
+@import "navbar";
+@import "card";
+@import "accordion";
+@import "breadcrumb";
+@import "pagination";
+@import "badge";
+@import "alert";
+@import "progress";
+@import "list-group";
+@import "close";
+@import "toasts";
+@import "modal";
+@import "tooltip";
+@import "popover";
+@import "carousel";
+@import "spinners";
+@import "offcanvas";
+@import "placeholders";
+
+// Helpers
+@import "helpers";
+
+// Utilities
+@import "utilities/api";
+// scss-docs-end import-stack

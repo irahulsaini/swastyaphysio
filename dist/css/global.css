@@ -1,0 +1,182 @@
+html,body {
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: .5px;
+    line-height: 1.5;
+}   
+header{
+    position: absolute;
+    top:0;
+    width:100%;
+    right:0;
+    z-index: 100;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+.logo-main{
+    display:none;
+}
+
+.btn{
+    transition:.3s;
+}
+.btn:hover{
+    transform:scale(1.1);
+}
+
+a {
+    text-decoration: none;
+}
+.navbar-brand img,
+.footer-logo img{
+    max-height: 60px;
+}
+.footer-secondary{
+    position: relative;
+    z-index: 99;
+}
+.team-item,
+.service-item,
+.blog-item{
+    position: relative;
+    padding-bottom:60px;
+    margin-bottom:30px;
+}
+.service-item{
+    padding-bottom:70px;
+
+}
+
+.team-item .action-btn,
+.service-item .action-btn,
+.blog-item .action-btn{
+    position: absolute;
+    bottom:1rem;
+    left:0;
+    right:0;
+    width:100%;
+}
+.team-item img{
+    width: 100%;
+}
+.team-carousel .owl-item,
+.service-item .owl-item{
+    height:100%;
+}
+.owl-stage{
+    display:flex;
+    margin-bottom:1rem;
+}
+.team-carousel .owl-stage,
+.service-item .owl-stage{
+    display:flex;
+}
+
+.main-banner{
+    background-image:url('../images/main-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height:100%;
+    min-height: 100%;
+    z-index: 99;
+}
+.main-banner .banner-wrapper{
+    background-color:rgba(0,0,0,.8);
+    min-height: 100%;
+}
+.main-banner.page-banner{
+	height:auto;
+	min-height: initial;
+}
+.owl-carousel .owl-dots{
+display:flex;
+justify-content: center;
+margin-bottom:30px;
+}
+
+.owl-carousel button.owl-dot.active{
+    border-radius: 100%;
+    background-color:rgba(0,0,0,1);
+    height:12px;
+    weight:12px;
+    display: flex;
+}
+.owl-carousel button.owl-dot span {
+    width: 10px;
+    height: 10px;
+    margin:1px 2px;
+    display: block;
+    background-color:rgba(0,0,0,.1);
+    border-radius: 100%;
+}
+.whatsapp-fixed{
+    position:fixed;
+    z-index:98;
+    bottom:2rem; 
+    right:1.5rem;
+    width:60px;
+    height:60px;
+}
+.whatsapp-fixed img{
+    width:100%;
+}
+.stars-panel,.stars {
+    color:#fb8e28;
+}
+.reviews-item .image{
+    min-width: 60px;
+    min-height: 60px;
+}
+.social-icons li a{
+    width:40px;
+    height:40px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.input-group .form-control{
+  border-top-right-radius: var(--bs-border-radius-xxl) !important;
+  border-bottom-right-radius: var(--bs-border-radius-xxl) !important;
+}
+.input-group .input-group-text{
+  
+  border-top-left-radius: var(--bs-border-radius-xxl) !important;
+  border-bottom-left-radius: var(--bs-border-radius-xxl) !important;
+}
+
+
+@media screen and (max-width:767px){
+
+    html,body {
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: .5px;
+        font-size:14px;
+    }   
+    header{
+        background-color: #fff;
+        position: relative;
+    }
+    .navbar-nav,
+    .dropdown-menu{
+        background-color: #fff;
+    }
+    .logo-main{
+        display:block;
+    }
+    .logo-light{
+        display: none;
+    }
+    .dropdown-menu a{
+    }
+    .team-item img{
+        width:50%;
+        border-radius: 100%;
+        padding:3px;
+        border:1px solid rgba(0,0,0,.1);
+        margin-top:1rem;
+    }
+}
