@@ -37,8 +37,53 @@ document.querySelectorAll('.input-email').forEach(function(element){
 });
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const carouselList = document.querySelectorAll('.treatmentCarousel');
+    if (!carouselList) return;
+    carouselList.forEach(function(carousel){
+        // clone items for seamless infinite scroll
+        const items = Array.from(carousel.children);
+        items.forEach(item => {
+            const clone = item.cloneNode(true);
+            carousel.appendChild(clone);
+        });
+        
+    })
+});
+
+document.querySelectorAll('.contactUsForm').forEach(function(element){
+    element.addEventListener('submit',function(e){
+        e.preventDefault();
+        const formData = new FormData(this)
+        sendMessage(e,formData,element)
+    })
+});
+async function sendMessage(element,formData,parent){
+
+    const submit = element.target.submit;
+    submit.innerHTML = 'Please Wait...';
+    submit.setAttribute('disabled',1);
+    
+        console.log(formData)
+    const query = await fetch('./mail.php',{
+        method: 'POST',
+        body: formData
+    });
+    const response = await query.json();
+    submit.innerHTML = 'Send';
+    
+    parent.querySelectorAll('.response').forEach(function(e){
+        if(response.status == true){
+            window.location.href = '/thankyou/';
+            e.innerHTML = '<div class="alert alert-success small mt-3">Thank you! Your message has been sent.</div>'
+        }else{
+            e.innerHTML = `<div class="alert alert-danger small mt-3">${response.message}</div>`
+            submit.removeAttribute('disabled');
+        }    
+    })
+}
 $('.testimonial-carousel,.team-carousel,.gallery,.serviceCarousel,.reviewsCarousel,.blogCarousel').owlCarousel({
-    loop:true,
+    loop:false,
     margin:30,
     responsiveClass:true,
     autoplay:true,
@@ -56,7 +101,25 @@ $('.testimonial-carousel,.team-carousel,.gallery,.serviceCarousel,.reviewsCarous
         }
     }
 });
-
+$('.our-clinics-carousel').owlCarousel({
+    loop:false,
+    margin:30,
+    responsiveClass:true,
+    autoplay:true,
+    nav:false,
+    dots:true,
+    responsive:{
+        0:{
+            items:1,
+        },
+        600:{
+            items:1,
+        },
+        1000:{
+            items:1,
+        }
+    }
+});
 /*
 $(window).scroll(function(){
   var scroll = $(window).scrollTop();

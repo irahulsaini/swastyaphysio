@@ -85,7 +85,7 @@ a {
     z-index: 99;
 }
 .main-banner .banner-wrapper{
-    background-color:rgba(0,0,0,.8);
+    background-color:rgba(0,0,0,.6);
     min-height: 100%;
 }
 .main-banner.page-banner{
@@ -93,35 +93,46 @@ a {
 	min-height: initial;
 }
 .owl-carousel .owl-dots{
-display:flex;
-justify-content: center;
-margin-bottom:30px;
+    display:flex;
+    justify-content: center;
+    margin-bottom:30px;
+    gap:5px;
 }
 
 .owl-carousel button.owl-dot.active{
     border-radius: 100%;
-    background-color:rgba(0,0,0,1);
-    height:12px;
-    weight:12px;
+    background-color:var(--bs-primary);
+    height:15px;
+    width:15px;
     display: flex;
+    opacity:1;
 }
 .owl-carousel button.owl-dot span {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     margin:1px 2px;
     display: block;
-    background-color:rgba(0,0,0,.1);
+    background-color:var(--bs-primary);
     border-radius: 100%;
+    opacity:0.3;
 }
-.whatsapp-fixed{
+.fixed-cta{
     position:fixed;
-    z-index:98;
-    bottom:2rem; 
-    right:1.5rem;
-    width:60px;
-    height:60px;
+    z-index:1001;
+    top:50%;
+    transform:translateY(-50%);
+    right:0;
+    width:70px;
+    background:rgba(255,255,255,0.9);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
-.whatsapp-fixed img{
+
+.fixed-cta a{
+    width:45px;
+    height:45px;
+}
+.fixed-cta img{
     width:100%;
 }
 .stars-panel,.stars {
@@ -146,6 +157,49 @@ margin-bottom:30px;
   
   border-top-left-radius: var(--bs-border-radius-xxl) !important;
   border-bottom-left-radius: var(--bs-border-radius-xxl) !important;
+}
+
+.treatmentCarouselWrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.treatmentCarousel {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scrollLeft linear infinite;
+    animation-duration: 40s; /* adjust speed */
+}
+
+.treatmentCarousel .item {
+    flex: 0 0 auto;
+    min-width: 200px; /* adjust width per your design */
+    max-width: 400px; /* adjust width per your design */
+}
+
+/* Pause on hover */
+.treatmentCarouselWrapper:hover .treatmentCarousel {
+    animation-play-state: paused;
+}
+
+/* Animation keyframes */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+@media screen and (max-width:767px){
+    
+    .treatmentCarousel .item {
+        flex: 0 0 auto;
+        min-width: 100px; /* adjust width per your design */
+        max-width: 200px; /* adjust width per your design */
+    }
 }
 
 
