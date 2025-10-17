@@ -8,9 +8,21 @@ $mail = array();
 require 'mailer/Exception.php';
 require 'mailer/PHPMailer.php';
 require 'mailer/SMTP.php';
-require './inc/settings.php';
+// require './inc/settings.php';
 
+$mail = array();
+$mail['to']         = 'irahulsaini01@gmail.com'; //replace with your email, multiple email id seperated by comma
+$mail['from_name']  = 'Rahul Saini'; //replace with yours
+$mail['from_mail']  = 'irahulsaini01@gmail.com'; //replace with yours
+$mail['subject']    = "A New Contact Message Received";
+$mail['message']    = '
+<p><b>Details of sender:</b></p>
 
+{fields}
+
+- Thanks &amp; Regards
+
+';
 
 /*
  ******************************************
