@@ -61,7 +61,7 @@ document.querySelectorAll('.contactUsForm').forEach(function(element){
 async function sendMessage(element,formData,parent){
 
     const submit = element.target.submit;
-    submit.innerHTML = 'Please Wait...';
+    // submit.innerHTML = 'Please Wait...';
     submit.setAttribute('disabled',1);
     
         console.log(formData)
