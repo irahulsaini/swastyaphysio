@@ -74,7 +74,7 @@ async function sendMessage(element,formData,parent){
     
     parent.querySelectorAll('.response').forEach(function(e){
         if(response.status == true){
-            window.location.href = '/thankyou/';
+            // window.location.href = '/thankyou/';
             e.innerHTML = '<div class="alert alert-success small mt-3">Thank you! Your message has been sent.</div>'
         }else{
             e.innerHTML = `<div class="alert alert-danger small mt-3">${response.message}</div>`
